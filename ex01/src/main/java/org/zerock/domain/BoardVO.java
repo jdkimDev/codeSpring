@@ -3,6 +3,7 @@ package org.zerock.domain;
 import java.sql.Date;
 
 public class BoardVO {
+	
 	// int(자료형) - Integer(객체)
 	// 산술연산가능, null초기화 못함. - 
 	//            int로 형변환시 산술연산가능, null처리가 가능하고 sql과 연동시 처리가 용이, DB자료형이 정수지만 null값이 필요한경우 Interger사용
