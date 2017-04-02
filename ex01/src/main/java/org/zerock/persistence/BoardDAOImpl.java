@@ -40,7 +40,7 @@ public class BoardDAOImpl implements BoardDAO{
 
 	@Override
 	public List<BoardVO> listAll() throws Exception {
-		return session.selectList(namespace+".listALll");
+		return session.selectList(namespace+".listAll");
 	}
 	
 }
