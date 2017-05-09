@@ -1,5 +1,7 @@
 package org.zerock.test;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.junit.Test;
@@ -20,6 +22,17 @@ public class BoardDAOTest {
 	
 	private static Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 	
+	@Test
+	public void testListPage() throws Exception{
+		int page = 70;
+		List<BoardVO> list = dao.listPage(page);
+		
+		for(BoardVO boardVO : list){
+			logger.info(boardVO.getBno()+":"+boardVO.getTitle());
+		}
+	}
+	
+	
 	/*
 	@Test
 	public void testCreate() throws Exception {
@@ -31,10 +44,11 @@ public class BoardDAOTest {
 	}
 	*/
 	
+	/*
 	@Test
 	public void testRead() throws Exception {
 		logger.info(dao.read(3).toString());
-	}
+	}*/
 	
 	/*
 	@Test

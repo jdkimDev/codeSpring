@@ -1,0 +1,36 @@
+
+
+jdk1.6이상 설치(1.8권장)
+
+http://spring.io/tools - ( http://spring.io/tools/sts/all ) - 32bit or 64bit download 및 압축해제
+
+file > new > spring project > spring mvc > ex00 / org.zerock.web
+
+maven 저장소 - 내pc > 사용자 > zerock > .m2
+
+sts 이용해서 스프링 mvc 프로젝트 생성하면 jdk 버전은 1.6 으로 생성
+> project facets 에서 java 버전 변경
+> java compiler 에서 java 버전 변경
+
+http://projects.spring.io/spring-framework/ 를 참고하면 프로젝트 버전 확인가능
+> pom.xml > properties > org.springframework-version 변경
+
+tomcat설치 > http://tomcat.apache.org 에서 tomcat8.zip 다운로드
+
+sts > windows > preferences > server > runtime environments > add > tomcat8.0지정 > 설치폴더선택
+
+*------
+
+mysql 설치 및 설정
+
+*------
+
+>> pom.xml
+spring-test
+spring-jdbc
+mysql-connector-java
+mybatis
+mybatis-spring
+log4jdbc-log4j2-jdbc4
+javax.servlet
+junit

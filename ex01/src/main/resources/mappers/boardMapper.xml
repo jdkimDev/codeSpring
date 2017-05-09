@@ -47,5 +47,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		     ORDER BY BNO DESC, REGDATE DESC  
 		]]>
 	</select>
+	
+	<!-- cf) #{page} 의 경우 내부적으로  getPage()를 호출한다. -->
+	<select id="listPage" resultType="BoardVO">
+		<![CDATA[
+			SELECT BNO
+			     , TITLE
+			     , CONTENT
+			     , WRITER
+			     , REGDATE
+			     , VIEWCNT
+			  FROM TBL_BOARD
+			 WHERE BNO > 0
+		     ORDER BY BNO DESC, REGDATE DESC
+		     LIMIT #{page}, 10
+		]]>
+	</select>
+	
+	<select id="listCriteria" resultType="BoardVO">
+		<![CDATA[
+			SELECT BNO
+			     , TITLE
+			     , CONTENT
+			     , WRITER
+			     , REGDATE
+			     , VIEWCNT
+			  FROM TBL_BOARD
+			 WHERE BNO > 0
+		     ORDER BY BNO DESC, REGDATE DESC
+		     LIMIT #{pageStart}, #{perPageNum}
+		]]>
+	</select>
 
 </mapper>
