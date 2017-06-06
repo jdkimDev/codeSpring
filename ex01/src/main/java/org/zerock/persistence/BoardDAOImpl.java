@@ -36,8 +36,7 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public void delete(Integer bno) throws Exception {
 		session.delete(namespace+".delete", bno);
-		
-	}
+	} 
 
 	@Override
 	public List<BoardVO> listAll() throws Exception {
@@ -56,6 +55,11 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception{
 		return session.selectList(namespace+".listCriteria", cri);
+	}
+	
+	@Override
+	public int countPaging(Criteria cri) throws Exception{
+		return session.selectOne(namespace+".countPaging", cri);
 	}
 	
 }

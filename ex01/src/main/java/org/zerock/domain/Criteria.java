@@ -1,6 +1,6 @@
 package org.zerock.domain;
 
-//Criteria ( 검색기준, 분류기준 )
+//Criteria 사전적의미 : 검색기준, 분류기준 
 public class Criteria {
 	private int page;
 	private int perPageNum;
@@ -15,15 +15,17 @@ public class Criteria {
 			this.page=1;
 			return;
 		}
-		this.page=page;
+		
+		this.page = page;
 	}
 	
-	public void setPerPageNum(int perPateNum){
+	public void setPerPageNum(int perPageNum){
 		if(perPageNum<=0 || perPageNum>100){
 			this.perPageNum=10;
 			return;
 		}
-		this.perPageNum=perPageNum;
+		
+		this.perPageNum = perPageNum;
 	}
 	
 	public int getPage(){
@@ -33,7 +35,9 @@ public class Criteria {
 	//method for MyBatis SQL Mapper
 	//XML Mapper 에서 사용하는 getter를 제공
 	public int getPageStart(){
+		//시작데이터번호 = (페이지번호-1) * 페이지당보여지는개수
 		return (this.page-1)*perPageNum;
+		
 	}
 	
 	//method for MyBatis SQL Mapper

@@ -78,5 +78,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		     LIMIT #{pageStart}, #{perPageNum}
 		]]>
 	</select>
+	
+	<select id="countPaging" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*)
+			  FROM TBL_BOARD
+			 WHERE BNO > 0
+		]]>
+	</select>
 
 </mapper>
